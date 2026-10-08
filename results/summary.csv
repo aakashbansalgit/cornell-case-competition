@@ -1,0 +1,5 @@
+,annual_return,annual_vol,sharpe,max_drawdown,worst_month,annual_turnover
+Static 60/20/20,0.0746,0.0923,0.6552,0.3284,-0.1035,0.0000
+Defensive switch,0.0574,0.0645,0.6541,0.1449,-0.0602,0.3967
+"Momentum, vol target",0.0502,0.0543,0.6395,0.0826,-0.0477,1.1593
+"Momentum, vol target, stop",0.0474,0.0532,0.6034,0.0826,-0.0477,1.3481
