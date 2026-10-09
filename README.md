@@ -1,5 +1,10 @@
 # cornell-case-competition
 
+[![tests](https://github.com/aakashbansalgit/cornell-case-competition/actions/workflows/tests.yml/badge.svg)](https://github.com/aakashbansalgit/cornell-case-competition/actions/workflows/tests.yml)
+
+Rebuilt without look-ahead, momentum with a volatility target cuts the worst drawdown of a 60/20/20 portfolio from 33% to 8% at almost the same Sharpe ratio.
+
+![](figures/cumulative.png)
 Defensive allocation strategies for the 2025 Cornell Investment Portfolio Case Competition, where the case was to design a defensive equity fund that holds up in sell-offs without giving away too much of the market's return. Team 19 was Aakash Bansal, Jaehong Park, Piyush Sen and Saurabh Jamadagni.
 
 This is a rebuild of our submission. Going back over it afterwards, I found that the competition notebook set each month's allocation using that same month's return, and its stop-loss swapped out a month's loss after it had happened. Both flatter a backtest badly. Here every allocation for month t is decided from data that existed at the end of month t-1, and `tests/test_no_lookahead.py` checks that by shocking a month's returns and confirming no weight up to that month moves. The competition data isn't public, so the returns are rebuilt from SPY and AGG total returns and the 3-month T-bill rate from FRED, which starts the sample in 2003.
