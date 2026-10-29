@@ -34,11 +34,20 @@ Momentum with the volatility target cuts the worst drawdown from 33% to 8% at al
 
 The parameters, 70% maximum equity, 8% target volatility and the 20/35/45 stress mix, are the ones we chose during the competition on its 1976 to 2024 data, which overlaps this sample. Treat the results as in-sample for the parameters, though not for the signals.
 
+## Live record
+
+`live.py` runs the three main strategies forward. In the first days of each month it records each one's weights for that month, worked out from data through the last month end, and a later run fills in the month's net return. The stop-loss variant is left out because it needs the strategy's running value from the start of the sample.
+
+<!-- live:start -->
+The first allocations will be recorded in the first days of November 2026.
+<!-- live:end -->
+
 ## Running it
 
 ```
 pip install numpy pandas matplotlib yfinance
 python backtest.py
+python live.py                  # this month's allocations, and last month's returns
 python tests/test_no_lookahead.py
 ```
 
